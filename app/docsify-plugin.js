@@ -4071,7 +4071,7 @@ window.$docsify = {
         lines.push(`<p><strong>Date</strong>: ${escapeHtml(meta.date || 'Unknown')}</p>`);
         if (meta.pdf) {
           lines.push(
-            `<p class="paper-meta-link-row"><span class="paper-meta-link-label"><strong>PDF</strong>:</span> <a class="paper-meta-link" href="${escapeHtml(meta.pdf)}" target="_blank">${escapeHtml(meta.pdf)}</a> <button class="dpr-pdf-preview-toggle" type="button" data-pdf-preview-toggle data-pdf-url="${escapeHtml(meta.pdf)}" aria-expanded="false">预览 PDF</button></p>`
+            `<p class="paper-meta-link-row"><span class="paper-meta-link-label"><strong>PDF</strong>:</span> <a class="paper-meta-link" href="${escapeHtml(meta.pdf)}" target="_blank">${escapeHtml(meta.pdf)}</a></p>`
           );
         }
         if (meta.tags && meta.tags.length) {
