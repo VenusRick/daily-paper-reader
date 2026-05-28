@@ -25,3 +25,60 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: enc-class
+      description: 网络流量分析与加密流量分类论文检索
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: encrypted traffic classification
+          keyword_cn: 加密流量分类
+          query: classification of encrypted network traffic using machine learning and deep learning
+        - keyword: network traffic analysis
+          keyword_cn: 网络流量分析
+          query: analysis of network traffic patterns, flow statistics, and behavior detection
+        - keyword: traffic feature extraction
+          keyword_cn: 流量特征提取
+          query: feature extraction from network packets and flows for machine learning classification
+        - keyword: packet inspection
+          keyword_cn: 数据包检测
+          query: deep packet inspection techniques for network traffic analysis and application identification
+        - keyword: network security
+          keyword_cn: 网络安全
+          query: network security monitoring and intrusion detection using traffic analysis
+        - keyword: intrusion detection system
+          keyword_cn: 入侵检测系统
+          query: intrusion detection systems for network threats and anomaly-based traffic classification
+      intent_queries:
+        - query: Find recent papers on encrypted traffic classification using deep learning.
+          query_cn: 查找使用深度学习的加密流量分类的近期论文。
+          enabled: true
+          source: manual
+          note: ''
+        - query: What are the state of the art methods for network traffic analysis in encrypted environments?
+          query_cn: 加密环境下网络流量分析的最先进方法是什么？
+          enabled: true
+          source: manual
+          note: ''
+        - query: Machine learning techniques for feature extraction and classification from network traffic.
+          query_cn: 从网络流量中进行特征提取和分类的机器学习技术。
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-05-28T07:08:00.361Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
